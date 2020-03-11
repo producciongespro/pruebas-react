@@ -1,15 +1,29 @@
-import React from 'react';
+import React, {useState}  from 'react';
 import Menu from './componentes/Menu';
 import Grafico1 from './componentes/Grafico1';
+import Grafico2 from './componentes/Grafico2';
+import Grafico3 from './componentes/Grafico3';
+const componentes = [ <Grafico1/>, <Grafico2/>,  <Grafico3/>  ];
 
 function App() {
+  const [compActual, setCompActual ]= useState(null);
+
+  const handleMontarComponentes =(e)=> {
+    let i = e.target.id;
+    //console.log("i->",i);    
+    setCompActual(componentes[i]  );
+  }
+
   return (
     <div className="container">
       <div className="row">
-          <Menu/>
+          <Menu handleMontarComponentes={handleMontarComponentes} />
       </div>
+      <br/>
       <div className="row">
-          <Grafico1/>
+          {
+            compActual
+          }
       </div>
 
     </div>

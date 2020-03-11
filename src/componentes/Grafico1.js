@@ -14,7 +14,7 @@ function Grafico1 () {
         //setDatosJson(rawJson.results);       
         let resultados = await rawJson.results.filter((r)=>{
             //return r.name === 'JavaScript';
-            return r.name === 'Pascal';
+            return r.name === 'PHP';
         });
         console.log("resultados",resultados); 
         setDatosJson(resultados);       
