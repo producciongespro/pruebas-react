@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Menu from './componentes/Menu';
 import Grafico1 from './componentes/Grafico1';
 
