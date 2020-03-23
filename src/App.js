@@ -1,32 +1,34 @@
-import React, {useState}  from 'react';
-import Menu from './componentes/Menu';
-import Grafico1 from './componentes/Grafico1';
-import Grafico2 from './componentes/Grafico2';
-import Grafico3 from './componentes/Grafico3';
-const componentes = [ <Grafico1/>, <Grafico2/>,  <Grafico3/>  ];
+import React, {useState, useEffect } from 'react';
+import Form1 from './componentes/Form1';
+import Splash from './componentes/Splash';
+import Axios from 'axios';
 
+
+var arrayTipo=null;
 function App() {
-  const [compActual, setCompActual ]= useState(null);
+  const [isListo, SetIsListo] = useState(false);
 
-  const handleMontarComponentes =(e)=> {
-    let i = e.target.id;
-    //console.log("i->",i);    
-    setCompActual(componentes[i]  );
+  useEffect(()=>{
+    cargarDatos();
+  },[])
+
+  function cargarDatos() {
+    arrayTipo = Axios.get ("http://localhost/sanrafa-master/obtener_select.php")    
+      .then((response) => {
+        arrayTipo =response.data;        
+        SetIsListo(true);
+      })   
+    
   }
 
   return (
-    <div className="container">
-      <div className="row">
-          <Menu handleMontarComponentes={handleMontarComponentes} />
-      </div>
-      <br/>
-      <div className="row">
-          {
-            compActual
-          }
-      </div>
-
-    </div>
+    <React.Fragment>
+      {
+        !isListo ?
+            <Splash /> :   <Form1  arrayTipo={arrayTipo} />        
+      }    
+        
+    </React.Fragment> 
   );
 }
 
