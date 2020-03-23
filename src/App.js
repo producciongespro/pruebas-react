@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import Form1 from './componentes/Form1';
 import Splash from './componentes/Splash';
-import Axios from 'axios';
+import axios from 'axios';
 
 
 var arrayTipo=null;
@@ -13,7 +13,7 @@ function App() {
   },[])
 
   function cargarDatos() {
-    arrayTipo = Axios.get ("http://localhost/sanrafa-master/obtener_select.php")    
+    arrayTipo = axios.get ("http://localhost/sanrafa-master/obtener_select.php")    
       .then((response) => {
         arrayTipo =response.data;        
         SetIsListo(true);

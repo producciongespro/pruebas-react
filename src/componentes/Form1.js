@@ -1,12 +1,25 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 
 
 function Form1(props) {
     const { register, handleSubmit, errors } = useForm();
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data);
+        
+        axios({
+            method: 'post',
+            url: 'http://localhost/sanrafa-master/enviar_datos2.php',
+            data: data
+          })
+          .then(function (resp) {
+            console.log(resp);
+            
+          });
+    }
     console.log(errors);
 
 
@@ -23,14 +36,14 @@ function Form1(props) {
                 <select
                     className="custom-select"
                     id="selTipo"
-                    name="tipo"
+                    name="idTipo"
                     ref={register({ required: true })}
                 >
                     <option value="0">Seleccione un opción</option>
                     {
                         props.arrayTipo.map((item,i)=>                            
                         (
-                            <option key={"tipo"+i} value={item.tipo}> {item.tipo} </option>
+                            <option key={"tipo"+i} value={item.id}> {item.tipo} </option>
                         ))
                     }
                 </select>
