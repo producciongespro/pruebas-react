@@ -31,23 +31,26 @@ function Form1(props) {
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                    <label className="input-group-text" htmlFor="selTipo">Seleccione el tipo de negocio o servicio:</label>
+                    <label className="input-group-text" htmlFor="selTipo">Seleccione el tipo de negocio o servicio:</label>                    
                 </div>
                 <select
+                    
                     className="custom-select"
                     id="selTipo"
                     name="idTipo"
-                    ref={register({ required: true })}
-                >
-                    <option value="0">Seleccione un opción</option>
+                    ref={register({ required: true })}                                        
+                > 
+                <option value=""> Seleccionar una opción </option>                   
                     {
                         props.arrayTipo.map((item,i)=>                            
                         (
                             <option key={"tipo"+i} value={item.id}> {item.tipo} </option>
                         ))
                     }
+                    
                 </select>
             </div>
+            {errors.idTipo && <p className="text-danger" >Debe seleccionar el tipo de negocio</p>}
 
             <div className="input-group mb-3">
                 <div className="input-group-prepend">
@@ -62,6 +65,7 @@ function Form1(props) {
                     ref={register({ required: true })}
                 />
             </div>
+            {errors.nombre && <p className="text-danger" >Nombre requerido</p>}
 
             <div className="row">
                 <div className="col-sm-6">
@@ -78,6 +82,7 @@ function Form1(props) {
                             ref={register({ required: true })}
                         />
                     </div>
+                    {errors.telefono && <p className="text-danger" >Teléfono requerido</p>}
                 </div>
 
                 <div className="col-sm-6">
@@ -94,6 +99,7 @@ function Form1(props) {
                             ref={register({ required: true })}
                         />
                     </div>
+                    {errors.horario && <p className="text-danger" >Horario requerido</p>}
                 </div>
 
 
@@ -113,6 +119,7 @@ function Form1(props) {
                             ref={register({ required: true })}
                         />
                     </div>
+                    {errors.direccion && <p className="text-danger" >Dirección requerido</p>}
                 
 
                     <div className="input-group mb-3">
@@ -128,6 +135,7 @@ function Form1(props) {
                             ref={register({ required: true })}
                         />
                     </div>
+                    {errors.detalle && <p className="text-danger" >Detalle requerido</p>}
 
                     <div className="input-group mb-3">
                         <div className="input-group-prepend">
@@ -142,7 +150,8 @@ function Form1(props) {
                             ref={register({ required: true })}
                         />
                     </div>
-                
+                    {errors.contacto && <p className="text-danger" >Contacto requerido</p>}
+                <br/>
 
 
 
