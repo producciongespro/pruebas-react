@@ -27,8 +27,7 @@ export default class Grafico4 extends React.Component {
   };
 
   render() {
-    const {useCanvas} = this.state;
-    const content = useCanvas ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
+    const {useCanvas} = this.state;    
     const BarSeries = useCanvas ? VerticalBarSeriesCanvas : VerticalBarSeries;
     return (
       <div>
