@@ -1,0 +1,34 @@
+[
+    {
+        "nombre": "pollo",
+        "cantidad": 5
+      },
+      
+      {
+        "nombre": "cerdo",
+        "cantidad": 15
+      },
+      
+      {
+        "nombre": "pescado",
+        "cantidad": 18
+      },
+  
+      {
+        "nombre": "res",
+        "cantidad": 35
+      },
+      
+      {
+        "nombre": "mariscos",
+        "cantidad": 8
+      },
+      {
+        "nombre": "vegetariana",
+        "cantidad": 6
+      },
+      {
+        "nombre": "otra",
+        "cantidad": 2
+      }
+]
