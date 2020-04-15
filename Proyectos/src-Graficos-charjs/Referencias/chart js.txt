@@ -1,0 +1,5 @@
+https://www.createwithdata.com/react-chartjs-dashboard/
+https://blog.bitsrc.io/customizing-chart-js-in-react-2199fa81530a
+https://www.chartjs.org/docs/latest/
+https://blog.bitsrc.io/customizing-chart-js-in-react-2199fa81530a
+https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
